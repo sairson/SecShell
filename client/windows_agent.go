@@ -83,7 +83,7 @@ func main() {
 
 CONN:
 	for {
-		//conn, err := net.Dial("tcp","106.14.6.160:40300")
+	
 		key := pbkdf2.Key([]byte("@SDW*##@SZZCSDGDSA2"), []byte("salt"), 1024, 32, sha1.New) // 新建一个加密算法
 		block, _ := kcp.NewAESBlockCrypt(key)
 		conn, err := kcp.DialWithOptions("127.0.0.1:8888", block, 10, 3)
